@@ -1,7 +1,6 @@
 # P001_RealState_Insights
-_NOTE: This project is on going_
+_NOTE: This project is on going_ <br>
 Insights from a real state portfolio analysis.
-
 
 ![home](https://user-images.githubusercontent.com/77681284/117519523-439a7900-af7a-11eb-8cf0-4900c78737e4.png)
 
