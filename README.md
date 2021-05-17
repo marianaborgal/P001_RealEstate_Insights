@@ -2,6 +2,7 @@
 _NOTE: This project is on going_
 Insights from a real state portfolio analysis.
 
+
 ![home](https://user-images.githubusercontent.com/77681284/117519523-439a7900-af7a-11eb-8cf0-4900c78737e4.png)
 
 This repository contains codes for the porfolio analysis of a real satate company. <br>
