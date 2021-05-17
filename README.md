@@ -29,7 +29,7 @@ The dashboard must contain:
 
 Variable | Definition
 ------------ | -------------
-|id | Unique ID for each property sold|
+|id | Unique ID for each property available|
 |date | Date that the property was available|
 |price | Sale price of each property |
 |bedrooms | Number of bedrooms|
