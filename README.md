@@ -32,10 +32,10 @@ _on going_
 ## 3. Business Assumptions
 * The data available is only from May 2014 to May 2015.
 * Seasons of the year:<br>
-      * Spring starts on March 21st
-      * Summer starts on June 21st
-      * Fall starts on September 23rd
-      * Winter starts on December 21d
+      * Spring starts on March 21st<br>
+      * Summer starts on June 21st<br>
+      * Fall starts on September 23rd<br>
+      * Winter starts on December 21d<br>
 * The variables goes as follows:<br>
 
 Variable | Definition
