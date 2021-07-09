@@ -20,22 +20,22 @@ st.set_page_config(page_title="HR Insights", page_icon="📊",
 st.markdown('*Additional information about House Rocket and this streamlit creator are by the end of this page.*')
 st.write('')
 
-title_format = '<p style="font-family:sans-serif;' \
+HR_format = '<p style="font-family:sans-serif;' \
                'color:#0000cc;' \
                'font-size: 50px;' \
                'font-weight: bold;' \
                'font-style: italic;' \
                'text-align: center;' \
                '">House Rocket Company</p>'
-st.markdown(title_format, unsafe_allow_html=True)
+st.markdown(HR_format, unsafe_allow_html=True)
 
-subheader_format = '<p style="font-family:sans-serif;' \
+welcome_format = '<p style="font-family:sans-serif;' \
                    'color:#0000cc;' \
                    'font-size: 25px;' \
                    'font-style: italic;' \
                    'text-align: center;' \
                    '">Welcome to House Rocket Data Report</p>'
-st.markdown(subheader_format, unsafe_allow_html=True)
+st.markdown(welcome_format, unsafe_allow_html=True)
 
 # =================================================
 # =============== HELPER FUNCTIONS ================
@@ -134,9 +134,8 @@ def portfolio_density(data, geofile):
             else:
                 data = data.copy()
 
-            table = data[['id', 'date', 'condition', 'zipcode',
-                          'buying_price', 'median_price_zipcode', 'selling_price_suggestion', 'expected_profit',
-                          'dist_fromlake', 'season_to_sell']].copy()
+            table = data[['id', 'date', 'condition', 'zipcode', 'dist_fromlake',
+                          'buying_price', 'median_price_zipcode', 'selling_price_suggestion', 'expected_profit' ]].copy()
 
 
             # table = go.Figure(data=[go.Table(
@@ -144,7 +143,7 @@ def portfolio_density(data, geofile):
             #                                              align='center'),
             #                                  cells=dict(values=[df['id'], df['date'], df['condition'], df['zipcode'],
             #                                                     df['buying_price'], df['median_price_zipcode'], df['selling_price_suggestion'], df['expected_profit'],
-            #                                                     df['dist_fromlake'], df['season_to_sell']],
+            #                                                     df['dist_fromlake']],
             #                                             align='center') )
             #                         ] )
             #
@@ -168,14 +167,14 @@ def profit_business_attributes(data):
 
         # business data = b
         b = data[data['decision']==1][['id', 'date', 'condition', 'zipcode', 'dist_fromlake',
-                  'buying_price', 'median_price_zipcode', 'selling_price_suggestion', 'expected_profit',
-                  'season_to_sell', 'med_autumn', 'med_spring', 'med_summer', 'med_winter',
-                  'yr_built', 'yr_renovated', 'neighbourhood',
-                  'bedrooms', 'bathrooms', 'sqft_living', 'sqft_lot', 'floors', 'waterfront', 'sqft_above', 'sqft_basement']].copy()
+                                       'buying_price', 'median_price_zipcode', 'selling_price_suggestion', 'expected_profit',
+                                       'yr_built', 'yr_renovated', 'neighbourhood',
+                                       'bedrooms', 'bathrooms', 'sqft_living', 'sqft_lot', 'floors', 'waterfront', 'sqft_above', 'sqft_basement']].copy()
 
         # ======= creating filters
-        c1, c2, c3 = st.beta_columns((5,1,5))
+        c1, c2, c3 = st.beta_columns((4,1,4))
 
+        # filters: buying_price, expected_profit, dist_fromlake
         with c1:
 
             f_buying_price = st.slider('Select maximum price',
@@ -191,11 +190,12 @@ def profit_business_attributes(data):
                                         int(b['dist_fromlake'].max()),
                                         value=int(b['dist_fromlake'].max()), step=2)
 
-            # filtering business data
+            # filtering business data = f_b
             f_b = b[(b['buying_price'] <= f_buying_price) &
                     (b['expected_profit'] <= f_expected_profit) &
                     (b['dist_fromlake'] <= f_dist_fromlake)]
 
+        # filters: zipcode, id
         with c3:
 
             f_zipcode = st.multiselect('Type or select zipcodes',
@@ -203,7 +203,7 @@ def profit_business_attributes(data):
             f_id = st.multiselect('Type or select properties ID',
                                   f_b['id'].sort_values(ascending=True).unique())
 
-            # filtering business data
+            # filtering business data = f_b2
             if (f_id != []) & (f_zipcode != []):
                 f_b2 = f_b.loc[(f_b['id'].isin(f_id)) & (f_b['zipcode'].isin(f_zipcode)), :]
                 # st.write('id and zipcode')
@@ -232,16 +232,17 @@ def profit_properties_attributes(data):
     st.title("Estimated Profit - Properties Attributes")
     exp_att_prop = st.beta_expander('Click here to expand and see estimated profit table according to properties attributes', expanded=False)
     with exp_att_prop:
+
         # properties data = p
         p = data[data['decision']==1][['id', 'date', 'condition', 'zipcode', 'dist_fromlake',
-                  'buying_price', 'median_price_zipcode', 'selling_price_suggestion', 'expected_profit',
-                  'season_to_sell', 'med_autumn', 'med_spring', 'med_summer', 'med_winter',
-                  'yr_built', 'yr_renovated', 'neighbourhood',
-                  'bedrooms', 'bathrooms', 'sqft_living', 'sqft_lot', 'floors', 'waterfront', 'sqft_above', 'sqft_basement']].copy()
+                                       'buying_price', 'median_price_zipcode', 'selling_price_suggestion', 'expected_profit',
+                                       'yr_built', 'yr_renovated', 'neighbourhood',
+                                       'bedrooms', 'bathrooms', 'sqft_living', 'sqft_lot', 'floors', 'waterfront', 'sqft_above', 'sqft_basement']].copy()
 
         # ======= creating filters
         c1, c2, c3 = st.beta_columns((1,2,2))
 
+        # filters: bedrooms, bathrooms
         with c1:
 
             f_bedrooms = st.selectbox('Select maximum number of bedrooms',
@@ -250,6 +251,7 @@ def profit_properties_attributes(data):
             f_bathrooms = st.selectbox('Select maximum number of bathrooms',
                                       p['bathrooms'].sort_values(ascending=True).unique().tolist(), key='bathrooms')
 
+        # filters: sqft_living, sqft_basement
         with c2:
             f_sqft_living = st.slider('Select maximum interior living space size',
                                       int(p['sqft_living'].min()),
@@ -261,6 +263,7 @@ def profit_properties_attributes(data):
                                       int(p['sqft_basement'].max()),
                                       value=int(p['sqft_basement'].max()), key='basement')
 
+        # filters: yrbuilt, yrrenovated
         with c3:
             f_yrbuilt = st.slider('Select minimum year property was built',
                                   int(p['yr_built'].min()),
@@ -272,7 +275,7 @@ def profit_properties_attributes(data):
                                   int(p['yr_renovated'].max()),
                                   value=int(p['yr_renovated'].min()), key='yrrenovated')
 
-
+        # filters: buying_price
         f_buying_price = st.slider('Select maximum price',
                                    int(p['buying_price'].min()),
                                    int(p['buying_price'].max()),
