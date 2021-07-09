@@ -26,7 +26,7 @@ c1, c2 = st.beta_columns((1,5))
 # image
 with c1:
     photo = Image.open('house.jpg')
-    st.image(photo, width=250)
+    st.image(photo, width=200)
 
 # headers
 with c2:
