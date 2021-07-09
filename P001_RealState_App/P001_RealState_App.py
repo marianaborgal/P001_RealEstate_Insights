@@ -17,25 +17,37 @@ from folium.plugins    import MarkerCluster
 st.set_page_config(page_title="HR Insights", page_icon="📊",
                    layout="wide")
 
+
 st.markdown('*Additional information about House Rocket and this streamlit creator are by the end of this page.*')
 st.write('')
 
-HR_format = '<p style="font-family:sans-serif;' \
-               'color:#0000cc;' \
-               'font-size: 50px;' \
-               'font-weight: bold;' \
-               'font-style: italic;' \
-               'text-align: center;' \
-               '">House Rocket Company</p>'
-st.markdown(HR_format, unsafe_allow_html=True)
+c1, c2 = st.beta_columns((1,5))
 
-welcome_format = '<p style="font-family:sans-serif;' \
+# image
+with c1:
+    photo = Image.open('house.jpg')
+    st.image(photo, width=250)
+
+# headers
+with c2:
+
+    st.write('')
+    HR_format = '<p style="font-family:sans-serif;' \
                    'color:#0000cc;' \
-                   'font-size: 25px;' \
+                   'font-size: 50px;' \
+                   'font-weight: bold;' \
                    'font-style: italic;' \
-                   'text-align: center;' \
-                   '">Welcome to House Rocket Data Report</p>'
-st.markdown(welcome_format, unsafe_allow_html=True)
+                   'text-align: left;' \
+                   '">House Rocket Company</p>'
+    st.markdown(HR_format, unsafe_allow_html=True)
+
+    welcome_format = '<p style="font-family:sans-serif;' \
+                       'color:#0000cc;' \
+                       'font-size: 25px;' \
+                       'font-style: italic;' \
+                       'text-align: left;' \
+                       '">Welcome to House Rocket Data Report</p>'
+    st.markdown(welcome_format, unsafe_allow_html=True)
 
 # =================================================
 # =============== HELPER FUNCTIONS ================
@@ -108,14 +120,16 @@ def portfolio_density(data, geofile):
             # grouping properties for dfmpap
             make_cluster = MarkerCluster().add_to(dfmap)
 
+            # '{:, .2f}'.format
             for index, row in data.iterrows():
                 folium.Marker([row['lat'], row['long']],
                               popup='Available since {0} for US$ {1}.'
                                     '\nSelling price suggestion is US$ {2}, resulting on an expected profit of US$ {3}.'
                                     '\nZipcode: {4}'
-                                    '\nProperty ID: {5}'.format(
-                                  row['date'], row['buying_price'], row['selling_price_suggestion'],
-                                  row['expected_profit'], row['zipcode'], row['id'])).add_to(make_cluster)
+                                    '\nProperty ID: {5}'
+                                    .format(row['date'], row['buying_price'], row['selling_price_suggestion'],
+                                            row['expected_profit'], row['zipcode'], row['id']))\
+                              .add_to(make_cluster)
 
             # coloring map area
             df_geofile = geofile[geofile['ZIP'].isin(data['zipcode'].tolist())]
@@ -309,7 +323,7 @@ def profit_properties_attributes(data):
 
 if __name__ == '__main__':
     # ====== DATA EXTRACTION
-    data = get_data('../datasets/processed/house_rocket.csv')
+    data = get_data('house_rocket.csv')
 
     geofile_raw = get_geofile('https://opendata.arcgis.com/datasets/83fc2e72903343aabff6de8cb445b81c_2.geojson')
 
