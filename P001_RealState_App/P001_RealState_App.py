@@ -4,6 +4,7 @@ import plotly.graph_objects as go
 import geopandas
 import folium
 
+from PIL import Image
 from streamlit_folium  import folium_static
 from folium.plugins    import MarkerCluster
 
@@ -12,13 +13,29 @@ from folium.plugins    import MarkerCluster
 # ================== PAGE SET UP ==================
 # =================================================
 
-# page titles
+# === page titles
 st.set_page_config(page_title="HR Insights", page_icon="📊",
-                   layout="wide")  # initial_sidebar_state = "expanded"
-st.title("*House Rocket Company*")
-st.header("*Welcome to House Rocket Data Report*")
+                   layout="wide")
 
+st.markdown('*Additional information about House Rocket and this streamlit creator are by the end of this page.*')
+st.write('')
 
+title_format = '<p style="font-family:sans-serif;' \
+               'color:#0000cc;' \
+               'font-size: 50px;' \
+               'font-weight: bold;' \
+               'font-style: italic;' \
+               'text-align: center;' \
+               '">House Rocket Company</p>'
+st.markdown(title_format, unsafe_allow_html=True)
+
+subheader_format = '<p style="font-family:sans-serif;' \
+                   'color:#0000cc;' \
+                   'font-size: 25px;' \
+                   'font-style: italic;' \
+                   'text-align: center;' \
+                   '">Welcome to House Rocket Data Report</p>'
+st.markdown(subheader_format, unsafe_allow_html=True)
 
 # =================================================
 # =============== HELPER FUNCTIONS ================
@@ -27,7 +44,10 @@ st.header("*Welcome to House Rocket Data Report*")
 @st.cache(allow_output_mutation=True)
 def get_data(path):
     data = pd.read_csv(path)
-    data = data
+    # data = data.head(1000) # filter data to edit faster
+
+    data.style.format(formatter={('buying_price', 'median_price_zipcode',
+                                  'selling_price_suggestion', 'expected_profit'): '{:,.2f}'})
 
     return data
 
@@ -66,7 +86,6 @@ def portfolio_density(data, geofile):
 
         st.write('**The sum of expected profit is', 'US$ {:,.2f}'.format(data['expected_profit'].sum()),
                  'for all available properties on database according to previously agreed criteria.**')
-        # st.write("**Decision:** This checkbox filters the properties according to previously agreed criteria.")
 
         f_decision = st.checkbox('Check to see properties suggested to be purchased.')
         if f_decision:
@@ -79,11 +98,12 @@ def portfolio_density(data, geofile):
 
         c1, c2 = st.beta_columns((1, 1))
 
+        c1.subheader('Properties distribution') # map
         with c1:
 
             # defining map dataframe
             dfmap = folium.Map(location=[data['lat'].mean(), data['long'].mean()],
-                                       default_zoom_start=15)
+                               default_zoom_start=15)
 
             # grouping properties for dfmpap
             make_cluster = MarkerCluster().add_to(dfmap)
@@ -103,28 +123,37 @@ def portfolio_density(data, geofile):
                                        key_on='feature.properties.ZIP',
                                        fill_color='YlOrRd', fill_opacity=0.7, line_opacity=0.2,
                                        legend_name='Expected Profit').add_to(dfmap)
-            st.subheader('Properties distribution')
+
             folium_static(dfmap)
 
+        c2.subheader('Properties Information') # table
         with c2:
 
-            st.subheader('Properties Information')
             if f_decision:
                 data = data[data['decision']==1]
             else:
                 data = data.copy()
 
-            df = data[['decision','id', 'date', 'condition', 'zipcode',
+            table = data[['id', 'date', 'condition', 'zipcode',
                           'buying_price', 'median_price_zipcode', 'selling_price_suggestion', 'expected_profit',
                           'dist_fromlake', 'season_to_sell']].copy()
 
 
+            # table = go.Figure(data=[go.Table(
+            #                                  header=dict(values=list(df.columns),
+            #                                              align='center'),
+            #                                  cells=dict(values=[df['id'], df['date'], df['condition'], df['zipcode'],
+            #                                                     df['buying_price'], df['median_price_zipcode'], df['selling_price_suggestion'], df['expected_profit'],
+            #                                                     df['dist_fromlake'], df['season_to_sell']],
+            #                                             align='center') )
+            #                         ] )
+            #
+            #
+            # st.write(table)
 
-            table = go.Figure(data=[go.Table(header=dict(values=list(df.columns)))])
-            table.show()
 
-            #st.dataframe(table)
-            #st.write('*Properties with selected attributes:', '{:,}*'.format(table['id'].count()))
+            st.dataframe(table)
+            st.write('*Properties with selected attributes:', '{:,}*'.format(table['id'].count()))
 
 
     exp_density.write("")
@@ -271,21 +300,6 @@ def profit_properties_attributes(data):
     return None
 
 
-# def new_2 (data):
-#
-#     st.title("New")
-#     exp_new_2 = st.beta_expander('click')
-#     with exp_new_2:
-#         f = data
-#         st.dataframe(f)
-#
-#     exp_new_2.write("")
-#     exp_new_2.write("*End of view*")
-#     exp_new_2.write("")
-#
-#     return None
-
-
 # =================================================
 # ================ MAIN FUNCTION ==================
 # =================================================
@@ -307,11 +321,19 @@ if __name__ == '__main__':
     profit_properties_attributes(data)
 
 
+st.markdown('---')
+st.markdown('---')
 
-st.title("Resumo do próposito da ferramenta")
-st.markdown("Resumo do próposito da ferramenta")
-st.header("Resumo do próposito da ferramenta")
-st.subheader("subheader ashduahsdas")
-st.write("write asmdasmola")
-st.write("")
-st.write("")
+st.title('Additional Information')
+
+st.header("Report Purpose:")
+
+st.write('House Rocket business model consists of purchasing and reselling properties through a digital platform.')
+st.write("This report was created by a request from House Rocket's CEO to visualize "
+         "all properties available to be bought at King County, Seatle.")
+
+st.write('')
+st.markdown('This data visualization is part of **House Rocket Insights Project** made by **Mariana Borges**.')
+st.markdown('You can read the business context and check the code for this streamlit on [github](https://github.com/marianaborgal/P001_RealState_Insights).')
+st.markdown('Other Projects: [Portfolio](https://github.com/marianaborgal)')
+st.markdown('Contact me: [LinkedIn](https://www.linkedin.com/in/marianaborgal/)')
