@@ -1,5 +1,4 @@
 # P001_RealState_Insights
-_NOTE: This project is on going_ <br>
 Insights from a real state portfolio analysis.
 
 ![home](https://user-images.githubusercontent.com/77681284/117519523-439a7900-af7a-11eb-8cf0-4900c78737e4.png)
@@ -8,35 +7,30 @@ This repository contains codes for the porfolio analysis of a real satate compan
 All information below is fictional.
 
 #### Project 001 - Real State Insights:
-The objetive of this project is to develop a online dashboard to the company's CEO so that a few data analysis can be made by him/her instantaneously.
+The objetives of this project are:
+* Perform exploratory data analysis on properties available on dataset.
+* Determine which properties should be bouth according to business criteria.
+* Develop a online dashboard that can be acessed by the CEO from a mobile or computer.
 
 ---
 ## 1. Business Problem
-House Rocket business model consists of purchasing and reselling properties through a digital platform. The data scientist is in charge to develop a online dashboard that can be acessed by the CEO from a mobile or computer with informations of properties available in King County (USA).<br>
-The dashboard must contain:
-* Report with suggested properties to purchase with recommended value
-* Report with suggested properties to sale with recommended value
-* Other insights for the company
-    * xxxx _on going_
-    * Data overview - general iformations about the database
-    * Prorpeties by zipcode - informations about the properties grouped by zipcode
-    * Portfolio density map - a map view with the database distribution 
-    * Properties price by timeline - properties price by year built or by date sold, and properties price distribution 
-    * Properties distribution by main attributes - properties distribution by number of bedrooms, bathrooms, floors, and by wether the property has or not a water view.
-    * Personalized data and map view - a section to choose attributes and see both dataframe and map distribution of these properties.
-    * xxxx _on going_
+House Rocket business model consists of purchasing and reselling properties through a digital platform. The data scientist is in charge to develop a online dashboard so that the company's CEO can have an overview of properties available to became part of House Rocket portfolio in King County (USA).<br>
+<br>The dashboard must contain:
+   * A map view with properties available.
+   * A table view with attributes filters.
+   * Expected profit of each property.
 
 ## 2. Business Results
-_on going_
+Based on business criteria, from 21,436 available properties, 10,707 should be bought by House Rocket and could result on a US$1,249,116,423.00 profit. 
 
 ## 3. Business Assumptions
 * The data available is only from May 2014 to May 2015.
 * Seasons of the year:<br>
-      * Spring starts on March 21st<br>
-      * Summer starts on June 21st<br>
-      * Fall starts on September 23rd<br>
-      * Winter starts on December 21d<br>
-* The variables goes as follows:<br>
+   * Spring starts on March 21st<br>
+   * Summer starts on June 21st<br>
+   * Fall starts on September 23rd<br>
+   * Winter starts on December 21d<br>
+* The variables on original dataset goes as follows:<br>
 
 Variable | Definition
 ------------ | -------------
@@ -62,31 +56,52 @@ Variable | Definition
 |sqft_living15 | The square footage of interior housing living space for the nearest 15 neighbors|
 |sqft_lot15 | The square footage of the land lots of the nearest 15 neighbors|
 
+* Variables created during the project development goes as follow:
+
+Variable | Definition
+------------ | -------------
+| decision | wether a property should be bought |
+| median_price_zipcode | median price of zipcode region |
+| selling_price_suggestion | 30% more on buying price, if property should be bought |
+| expected_profit | difference between buying price and selling price suggestion  |
+| dist_fromlake | distance from the center of Evergreen Point Floating Bridge |
+| season | season property became available |
+| med_autumn | median price from properties available during autumn  |
+| med_spring | median price from properties available during spring |
+| med_summer | median price from properties available during summer |
+| med_winter | median price from properties available during winter |
+| season_to_sell | in which season property should be sold |
+
+* Business criteria to determine wether a property should be bought are:
+   * Property must have a 'condition' equals or bigger than 3.
+   * Property price must be below or equal the median price on the region (zipcode)
+
 <br>
 
 ## 4. Solution Strategy
-* xxxx _on going_
 1. Understanding the business model
 2. Understanding the business problem
 3. Collecting the data
 4. Data Description
-5. Feature Engineering
-6. Data Filtering
-7. Exploratory Data Analysis
-8. Insights Conclusion
-9. Dashboard deploy on [Heroku](xxx)
-* xxxx _on going_
+5. Data Filtering
+6. Feature Engineering
+8. Exploratory Data Analysis
+9. Insights Conclusion
+10. Dashboard deploy on [Heroku](https://p001-house-rocket-analysis.herokuapp.com/)
 
-## 5. Top 3 Data Insights
-1. x
-2. x
-3. x
+
+## 5. Top 4 Data Insights
+1. Properties built with basements decreased after the 80s
+2. Almost 60% of the properties became available during summer/spring.
+3. 50% of properties that should be bought are in a 15km radius from the lake.
+4. Properties selected to be bought in a 15km radius from lake correspond to 60% of expected profit.
 
 ## 6. Conclusion
-The objective of this project was to create a online dashboard to House Rocket's CEO. Deploying the dashboard on Heroku platforms provides the CEO acess from anywhere facilitating both pre-arrange or costumized data visualization.
+The objective of this project was to create a online dashboard to House Rocket's CEO. Deploying the dashboard on Heroku platforms provided the CEO acess from anywhere facilitating data visualization.
 
 ## 7. Next Steps
-* xxxx _on going_
+* Determine in which season of the year would be the best to execute a sale.
+* 
 
 
 ----
