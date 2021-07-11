@@ -23,8 +23,7 @@ House Rocket business model consists of purchasing and reselling properties thro
 
 ## 2. Business Results
 Based on business criteria, from 21,436 available properties, 10,707 should be bought by House Rocket and could result on a US$1,249,116,423.00 profit. <br>
-
-<br>Maximum Value Invested: US$4,163,721,410.00<br>
+Maximum Value Invested: US$4,163,721,410.00<br>
 Maximum Value Returned: US$5,412,837,833.00<br>
 Maximum Expected Profit: US$1,249,116,423.00<br>
 
