@@ -16,6 +16,7 @@ The objetives of this project are:
 ## 1. Business Problem
 House Rocket business model consists of purchasing and reselling properties through a digital platform. The data scientist is in charge to develop a online dashboard so that the company's CEO can have an overview of properties available to became part of House Rocket portfolio in King County (USA).<br>
 <br>The dashboard must contain:
+   * Which properties the company should buy.
    * A map view with properties available.
    * A table view with attributes filters.
    * Expected profit of each property.
@@ -23,13 +24,21 @@ House Rocket business model consists of purchasing and reselling properties thro
 ## 2. Business Results
 Based on business criteria, from 21,436 available properties, 10,707 should be bought by House Rocket and could result on a US$1,249,116,423.00 profit. 
 
+Maximum Value Invested: US$4,163,721,410.00
+Maximum Value Returned: US$5,412,837,833.00
+Maximum Expected Profit: US$1,249,116,423.00
+
+This results on a 30.0 % gross revenue.
+
 ## 3. Business Assumptions
 * The data available is only from May 2014 to May 2015.
+* Properties with bedrooms disproportional with interior living squarefoot were deleted, assuming it was a input error.
 * Seasons of the year:<br>
    * Spring starts on March 21st<br>
    * Summer starts on June 21st<br>
    * Fall starts on September 23rd<br>
    * Winter starts on December 21d<br>
+
 * The variables on original dataset goes as follows:<br>
 
 Variable | Definition
@@ -97,7 +106,7 @@ Variable | Definition
 4. Properties selected to be bought in a 15km radius from lake correspond to 60% of expected profit.
 
 ## 6. Conclusion
-The objective of this project was to create a online dashboard to House Rocket's CEO. Deploying the dashboard on Heroku platforms provided the CEO acess from anywhere facilitating data visualization.
+The objective of this project was to create a online dashboard to House Rocket's CEO. Deploying the dashboard on Heroku platforms provided the CEO acess from anywhere facilitating data visualization and business decisions.
 
 ## 7. Next Steps
 * Determine in which season of the year would be the best to execute a sale.
