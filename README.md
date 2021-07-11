@@ -95,7 +95,7 @@ Variable | Definition
 6. Feature Engineering
 8. Exploratory Data Analysis
 9. Insights Conclusion
-10. Dashboard deploy on [Heroku](https://p001-house-rocket-analysis.herokuapp.com/)
+10. Dashboard deploy on [Heroku](https://p001-realstate-insights.herokuapp.com/)
 
 
 ## 5. Top 4 Data Insights
