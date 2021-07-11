@@ -22,11 +22,10 @@ House Rocket business model consists of purchasing and reselling properties thro
    * Expected profit of each property.
 
 ## 2. Business Results
-Based on business criteria, from 21,436 available properties, 10,707 should be bought by House Rocket and could result on a US$1,249,116,423.00 profit. 
-
-Maximum Value Invested: US$4,163,721,410.00
-Maximum Value Returned: US$5,412,837,833.00
-Maximum Expected Profit: US$1,249,116,423.00
+Based on business criteria, from 21,436 available properties, 10,707 should be bought by House Rocket and could result on a US$1,249,116,423.00 profit. <br>
+Maximum Value Invested: US$4,163,721,410.00<br>
+Maximum Value Returned: US$5,412,837,833.00<br>
+Maximum Expected Profit: US$1,249,116,423.00<br>
 
 This results on a 30.0 % gross revenue.
 
@@ -109,8 +108,9 @@ Variable | Definition
 The objective of this project was to create a online dashboard to House Rocket's CEO. Deploying the dashboard on Heroku platforms provided the CEO acess from anywhere facilitating data visualization and business decisions.
 
 ## 7. Next Steps
-* Determine in which season of the year would be the best to execute a sale.
-* 
+* Determine which season of the year would be the best to execute a sale.
+* Get more address data to fill NAs.
+* Expand this methodology to other regions that House Rocket operates.
 
 
 ----
