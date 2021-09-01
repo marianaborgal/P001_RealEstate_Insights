@@ -1,12 +1,12 @@
-# P001_RealState_Insights
-Insights from a real state portfolio analysis.
+# P001_RealEstate_Insights
+Insights from a real estate portfolio analysis.
 
 ![home](https://user-images.githubusercontent.com/77681284/117519523-439a7900-af7a-11eb-8cf0-4900c78737e4.png)
 
 This repository contains codes for the porfolio analysis of a real satate company. <br>
 All information below is fictional.
 
-#### Project 001 - Real State Insights:
+#### Project 001 - Real Estate Insights:
 The objetives of this project are:
 * Perform exploratory data analysis on properties available on dataset.
 * Determine which properties should be bouth according to business criteria.
@@ -95,7 +95,7 @@ Variable | Definition
 6. Feature Engineering
 8. Exploratory Data Analysis
 9. Insights Conclusion
-10. Dashboard deploy on [Heroku](https://p001-house-rocket-analysis.herokuapp.com/)
+10. Dashboard deploy on [Heroku](https://p001-realestate-insights.herokuapp.com/)
 
 
 ## 5. Top 4 Data Insights
