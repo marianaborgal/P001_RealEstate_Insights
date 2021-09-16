@@ -1,8 +1,4 @@
 # P001_RealEstate_Insights
-Insights from a real estate portfolio analysis.
-
-![home](https://user-images.githubusercontent.com/77681284/117519523-439a7900-af7a-11eb-8cf0-4900c78737e4.png)
-
 This repository contains codes for the porfolio analysis of a real satate company. <br>
 All information below is fictional.
 
@@ -10,16 +6,20 @@ All information below is fictional.
 The objetives of this project are:
 * Perform exploratory data analysis on properties available on dataset.
 * Determine which properties should be bouth according to business criteria.
-* Develop a online dashboard that can be acessed by the CEO from a mobile or computer.
+* Develop a online [dashboard](https://p001-realstate-insights.herokuapp.com/) that can be acessed by the CEO from a mobile or computer.
+<br>
 
 ---
 ## 1. Business Problem
 House Rocket business model consists of purchasing and reselling properties through a digital platform. The data scientist is in charge to develop a online dashboard so that the company's CEO can have an overview of properties available to became part of House Rocket portfolio in King County (USA).<br>
-<br>The dashboard must contain:
+<img src="https://user-images.githubusercontent.com/77681284/117519523-439a7900-af7a-11eb-8cf0-4900c78737e4.png" alt="image" width="200" align="right"/>
+
+<br>The [dashboard](https://p001-realstate-insights.herokuapp.com/) must contain:
    * Which properties the company should buy.
    * A map view with properties available.
    * A table view with attributes filters.
    * Expected profit of each property.
+<br>
 
 ## 2. Business Results
 Based on business criteria, from 21,436 available properties, 10,707 should be bought by House Rocket and could result on a US$1,249,116,423.00 profit. <br>
@@ -28,6 +28,7 @@ Maximum Value Returned: US$5,412,837,833.00<br>
 Maximum Expected Profit: US$1,249,116,423.00<br>
 
 This results on a 30.0 % gross revenue.
+<br><br>
 
 ## 3. Business Assumptions
 * The data available is only from May 2014 to May 2015.
@@ -83,7 +84,6 @@ Variable | Definition
 * Business criteria to determine wether a property should be bought are:
    * Property must have a 'condition' equals or bigger than 3.
    * Property price must be below or equal the median price on the region (zipcode)
-
 <br>
 
 ## 4. Solution Strategy
@@ -96,27 +96,32 @@ Variable | Definition
 8. Exploratory Data Analysis
 9. Insights Conclusion
 10. Dashboard deploy on [Heroku](https://p001-realestate-insights.herokuapp.com/)
-
+<br>
 
 ## 5. Top 4 Data Insights
 1. Properties built with basements decreased after the 80s
 2. Almost 60% of the properties became available during summer/spring.
 3. 50% of properties that should be bought are in a 15km radius from the lake.
 4. Properties selected to be bought in a 15km radius from lake correspond to 60% of expected profit.
+<br>
 
 ## 6. Conclusion
 The objective of this project was to create a online dashboard to House Rocket's CEO. Deploying the dashboard on Heroku platforms provided the CEO acess from anywhere facilitating data visualization and business decisions.
+<br><br>
 
 ## 7. Next Steps
 * Determine which season of the year would be the best to execute a sale.
 * Get more address data to fill NAs.
 * Expand this methodology to other regions that House Rocket operates.
+<br>
 
-
-----
-**References:**
+---
+## References:
 * Python from Zero to DS lessons on [Youtube](https://www.youtube.com/watch?v=1xXK_z9M6yk&list=PLZlkyCIi8bMprZgBsFopRQMG_Kj1IA1WG&ab_channel=SejaUmDataScientist)
 * Blog [Seja um Data Scientist](https://sejaumdatascientist.com/os-5-projetos-de-data-science-que-fara-o-recrutador-olhar-para-voce/)
 * Dataset House Sales in King County (USA) from [Kaggle](https://www.kaggle.com/harlfoxem/housesalesprediction)
 * Variables meaning on [Kaggle discussion](https://www.kaggle.com/harlfoxem/housesalesprediction/discussion/207885)
 * <div>Icons made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+
+![home](https://user-images.githubusercontent.com/77681284/117519523-439a7900-af7a-11eb-8cf0-4900c78737e4.png)
+
