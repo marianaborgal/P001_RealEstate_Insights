@@ -1,6 +1,6 @@
 # P001_RealEstate_Insights
 
-<i>Se quiser ler sobre esse projeto em português, [clique aqui](https://github.com/marianaborgal/P001_RealEstate_Insights/blob/main/README.md).</i>
+<i>Se quiser ler sobre esse projeto em português, [clique aqui](https://github.com/marianaborgal/P001_RealEstate_Insights/blob/main/Readme_EmPortugu%C3%AAs.md).</i>
 
 
 This repository contains codes for the porfolio analysis of a real estate company. <br>
