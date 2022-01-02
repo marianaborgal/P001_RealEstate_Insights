@@ -1,20 +1,22 @@
 # P001_RealEstate_Insights
-This repository contains codes for the porfolio analysis of a real satate company. <br>
+
+<i>Se quiser ler sobre esse projeto em português, [clique aqui](https://github.com/marianaborgal/P001_RealEstate_Insights/blob/main/README.md).</i>
+
+
+This repository contains codes for the porfolio analysis of a real estate company. <br>
 All information below is fictional.
 
-#### Project 001 - Real Estate Insights:
+#### Project 001 - Real Estate Insights
 The objetives of this project are:
 * Perform exploratory data analysis on properties available on dataset.
 * Determine which properties should be bouth according to business criteria.
-* Develop a online [dashboard](https://p001-realstate-insights.herokuapp.com/) that can be acessed by the CEO from a mobile or computer.
+* Develop a online [dashboard](https://p001-realestate-insights.herokuapp.com/) that can be acessed by the CEO from a mobile or computer.
 <br>
 
----
 ## 1. Business Problem
 House Rocket business model consists of purchasing and reselling properties through a digital platform. The data scientist is in charge to develop a online dashboard so that the company's CEO can have an overview of properties available to became part of House Rocket portfolio in King County (USA).<br>
 <img src="https://user-images.githubusercontent.com/77681284/117519523-439a7900-af7a-11eb-8cf0-4900c78737e4.png" alt="image" width="200" align="right"/>
-
-<br>The [dashboard](https://p001-realstate-insights.herokuapp.com/) must contain:
+<br>The [dashboard](https://p001-realestate-insights.herokuapp.com/) must contain:
    * Which properties the company should buy.
    * A map view with properties available.
    * A table view with attributes filters.
@@ -22,7 +24,7 @@ House Rocket business model consists of purchasing and reselling properties thro
 <br>
 
 ## 2. Business Results
-Based on business criteria, from 21,436 available properties, 10,707 should be bought by House Rocket and could result on a US$1,249,116,423.00 profit. <br>
+There are 21,436 available properties. Based on business criteria, 10,707 should be bought by House Rocket resulting on a US$1,2B profit.<br>
 Maximum Value Invested: US$4,163,721,410.00<br>
 Maximum Value Returned: US$5,412,837,833.00<br>
 Maximum Expected Profit: US$1,249,116,423.00<br>
@@ -38,6 +40,9 @@ This results on a 30.0 % gross revenue.
    * Summer starts on June 21st<br>
    * Fall starts on September 23rd<br>
    * Winter starts on December 21d<br>
+* Business criteria to determine wether a property should be bought are:
+   * Property must have a 'condition' equals or bigger than 3.
+   * Property price must be below or equal the median price on the region (zipcode)
 
 * The variables on original dataset goes as follows:<br>
 
@@ -81,9 +86,6 @@ Variable | Definition
 | med_winter | median price from properties available during winter |
 | season_to_sell | in which season property should be sold |
 
-* Business criteria to determine wether a property should be bought are:
-   * Property must have a 'condition' equals or bigger than 3.
-   * Property price must be below or equal the median price on the region (zipcode)
 <br>
 
 ## 4. Solution Strategy
@@ -95,11 +97,11 @@ Variable | Definition
 6. Feature Engineering
 8. Exploratory Data Analysis
 9. Insights Conclusion
-10. Dashboard deploy on [Heroku](https://p001-realestate-insights.herokuapp.com/)
+10. Dashboard deploy on [Heroku](https://p001-reale-insights.herokuapp.com/)
 <br>
 
 ## 5. Top 4 Data Insights
-1. Properties built with basements decreased after the 80s
+1. The number of properties built with basements decreased after the 80s.
 2. Almost 60% of the properties became available during summer/spring.
 3. 50% of properties that should be bought are in a 15km radius from the lake.
 4. Properties selected to be bought in a 15km radius from lake correspond to 60% of expected profit.
@@ -117,11 +119,8 @@ The objective of this project was to create a online dashboard to House Rocket's
 
 ---
 ## References:
-* Python from Zero to DS lessons on [Youtube](https://www.youtube.com/watch?v=1xXK_z9M6yk&list=PLZlkyCIi8bMprZgBsFopRQMG_Kj1IA1WG&ab_channel=SejaUmDataScientist)
-* Blog [Seja um Data Scientist](https://sejaumdatascientist.com/os-5-projetos-de-data-science-que-fara-o-recrutador-olhar-para-voce/)
 * Dataset House Sales in King County (USA) from [Kaggle](https://www.kaggle.com/harlfoxem/housesalesprediction)
 * Variables meaning on [Kaggle discussion](https://www.kaggle.com/harlfoxem/housesalesprediction/discussion/207885)
 * <div>Icons made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
-
-![home](https://user-images.githubusercontent.com/77681284/117519523-439a7900-af7a-11eb-8cf0-4900c78737e4.png)
-
+* Python from Zero to DS lessons on [Youtube](https://www.youtube.com/watch?v=1xXK_z9M6yk&list=PLZlkyCIi8bMprZgBsFopRQMG_Kj1IA1WG&ab_channel=SejaUmDataScientist)
+* Blog [Seja um Data Scientist](https://sejaumdatascientist.com/os-5-projetos-de-data-science-que-fara-o-recrutador-olhar-para-voce/)
