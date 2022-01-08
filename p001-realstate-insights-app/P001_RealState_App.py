@@ -10,6 +10,7 @@ from numerize.numerize import numerize
 from streamlit_folium  import folium_static
 from folium.plugins    import MarkerCluster
 
+import streamlit.components.v1 as comp
 
 # =================================================
 # ================== PAGE SET UP ==================
@@ -25,7 +26,7 @@ st.markdown('*For more information about House Rocket and this report, please go
 st.write('')
 
 # == header
-c1, c2 = st.columns((1,5))
+c1, c2 = st.columns((1, 5))
 
 # image
 with c1:
@@ -35,21 +36,21 @@ with c1:
 # title and subtitle
 with c2:
     st.write('')
-    HR_format = '<p style="font-family:sans-serif;' \
-                   'color:#0000cc;' \
-                   'font-size: 50px;' \
-                   'font-weight: bold;' \
-                   'font-style: italic;' \
-                   'text-align: left;' \
-                   '">House Rocket Company</p>'
+    HR_format = '<div> <p style="font-family:sans-serif;' \
+                'color:#0190cd ;' \
+                'font-size: 50px;' \
+                'font-weight: bold;' \
+                'font-style: italic;' \
+                'text-align: left;">' \
+                'House Rocket Company</p> </div'
     st.markdown(HR_format, unsafe_allow_html=True)
 
     welcome_format = '<p style="font-family:sans-serif;' \
-                       'color:#0000cc;' \
-                       'font-size: 25px;' \
-                       'font-style: italic;' \
-                       'text-align: left;' \
-                       '">Welcome to House Rocket Data Report</p>'
+                     'color:#5cc8ec;' \
+                     'font-size: 25px;' \
+                     'font-style: italic;' \
+                     'text-align: left;' \
+                     '">Welcome to House Rocket Data Report</p>'
     st.markdown(welcome_format, unsafe_allow_html=True)
 
 # =================================================
