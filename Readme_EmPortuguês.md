@@ -1,6 +1,7 @@
-Tradução em andamento.
-
 # P001_RealEstate_Insights
+
+_If you prefer to read in english, please [click here](https://github.com/marianaborgal/P001_RealEstate_Insights/blob/main/README.md)_
+
 Esse repositório contém códigos da análise do portfólio de uma empresa imbobiliária.<br>
 Todas as informações abaixo são fictícias. 
 
@@ -13,37 +14,41 @@ Os objetivos desse projeto são:
 
 ---
 ## 1. Problema do Negócio
-House Rocket business model consists of purchasing and reselling properties through a digital platform. The data scientist is in charge to develop a online dashboard so that the company's CEO can have an overview of properties available to became part of House Rocket portfolio in King County (USA).<br>
-<img src="https://user-images.githubusercontent.com/77681284/117519523-439a7900-af7a-11eb-8cf0-4900c78737e4.png" alt="image" width="200" align="right"/>
+O modelo de negócios da House Rocket consiste na compra e revenda de imóveis por meio de uma plataforma digital. O cientista de dados é responsável por desenvolver um dashboard online para que o CEO da empresa tenha uma visão geral dos imóveis disponíveis que possam fazer parte do portfólio da House Rocket em King County (EUA).<br>
 
-<br>The [dashboard](https://p001-realstate-insights.herokuapp.com/) must contain:
-   * Which properties the company should buy.
-   * A map view with properties available.
-   * A table view with attributes filters.
-   * Expected profit of each property.
-<br>
+<br>O [dashboard](https://p001-realstate-insights.herokuapp.com/) deve conter:
+   * Quais propriedades a empresa deve comprar.
+   * Uma visualização de mapa com propriedades disponíveis.
+   * Uma visualização de tabela com filtros de atributos.
+   * Lucro esperado de cada propriedade. <br> <br>
+
+
+**_Exemplo visual disponível no dashboard:_**
+
+<img src="https://user-images.githubusercontent.com/77681284/152690550-fc5b1c2e-6cf6-4bb5-ae7d-0b19b936ac0d.png"/>
+
 
 ## 2. Business Results
-Based on business criteria, from 21,436 available properties, 10,707 should be bought by House Rocket and could result on a US$1,249,116,423.00 profit. <br>
-Maximum Value Invested: US$4,163,721,410.00<br>
-Maximum Value Returned: US$5,412,837,833.00<br>
-Maximum Expected Profit: US$1,249,116,423.00<br>
+Com base nos critérios de negócios, dos 21.436 imóveis disponíveis, 10.707 podem ser comprados pela House Rocket e podem resultar em um lucro de US$1,2B. <br>
+Valor Máximo Investido: US$ 4.163.721.410,00<br>
+Valor máximo Retornado: US$ 5.412.837.833,00<br>
+Lucro Máximo Esperado: US$ 1.249.116.423,00<br>
 
-This results on a 30.0 % gross revenue.
+Resultando em uma receita bruta de 30,0%.
 <br><br>
 
 ## 3. Business Assumptions
-* The data available is only from May 2014 to May 2015.
-* Properties with bedrooms disproportional with interior living squarefoot were deleted, assuming it was a input error.
-* Seasons of the year:<br>
-   * Spring starts on March 21st<br>
-   * Summer starts on June 21st<br>
-   * Fall starts on September 23rd<br>
-   * Winter starts on December 21d<br>
+* Os dados disponíveis são apenas de maio de 2014 a maio de 2015.
+* Propriedades com número de quartos desproporcionais com área de estar interior foram excluídos, assumindo que era um erro de input nos dados.
+* Estações do ano:<br>
+   * Primavera começa em 21 de Março<br>
+   * Verão começa em 21 de Junho<br>
+   * Outuno começa em 23 de Setembro<br>
+   * Inverno começa em 21 de Dezembro<br>
 
-* The variables on original dataset goes as follows:<br>
+* As variáveis originais do conjuto de dados são:<br>
 
-Variable | Definition
+Variável | Definição
 ------------ | -------------
 |id | Unique ID for each property available|
 |date | Date that the property was available|
