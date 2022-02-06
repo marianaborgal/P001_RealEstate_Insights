@@ -45,7 +45,9 @@ Resultando em uma receita bruta de 30,0%.
    * Verão começa em 21 de Junho<br>
    * Outuno começa em 23 de Setembro<br>
    * Inverno começa em 21 de Dezembro<br>
-
+* Business criteria to determine wether a property should be bought are:
+   * Property must have a 'condition' equals or bigger than 3.
+   * Property price must be below or equal the median price on the region (zipcode)
 * As variáveis originais do conjuto de dados são:<br>
 
 Variável | Definição
@@ -88,9 +90,7 @@ Variable | Definition
 | med_winter | median price from properties available during winter |
 | season_to_sell | in which season property should be sold |
 
-* Business criteria to determine wether a property should be bought are:
-   * Property must have a 'condition' equals or bigger than 3.
-   * Property price must be below or equal the median price on the region (zipcode)
+
 <br>
 
 ## 4. Solution Strategy
