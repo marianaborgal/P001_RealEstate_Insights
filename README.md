@@ -15,13 +15,21 @@ The objetives of this project are:
 
 ## 1. Business Problem
 House Rocket business model consists of purchasing and reselling properties through a digital platform. The data scientist is in charge to develop a online dashboard so that the company's CEO can have an overview of properties available to became part of House Rocket portfolio in King County (USA).<br>
-<img src="https://user-images.githubusercontent.com/77681284/117519523-439a7900-af7a-11eb-8cf0-4900c78737e4.png" alt="image" width="200" align="right"/>
-<br>The [dashboard](https://p001-realestate-insights.herokuapp.com/) must contain:
+
+The [dashboard](https://p001-realestate-insights.herokuapp.com/) must contain:
    * Which properties the company should buy.
    * A map view with properties available.
    * A table view with attributes filters.
-   * Expected profit of each property.
-<br>
+   * Expected profit of each property.<br><br>
+
+
+**_Dashboard screenshot exemple:_**
+
+<img src="https://user-images.githubusercontent.com/77681284/152690550-fc5b1c2e-6cf6-4bb5-ae7d-0b19b936ac0d.png"/>
+
+
+<!-- <img src="https://user-images.githubusercontent.com/77681284/117519523-439a7900-af7a-11eb-8cf0-4900c78737e4.png" alt="image" width="200" align="right"/>
+<img src="https://user-images.githubusercontent.com/77681284/152690450-089c6833-edbe-4eb2-bfa6-261973611e3a.png" alt="dashboard screenshot" width="300"  align="right"/> -->
 
 ## 2. Business Results
 There are 21,436 available properties. Based on business criteria, 10,707 should be bought by House Rocket resulting on a US$1,2B profit.<br>
@@ -100,11 +108,10 @@ Variable | Definition
 10. Dashboard deploy on [Heroku](https://p001-reale-insights.herokuapp.com/)
 <br>
 
-## 5. Top 4 Data Insights
+## 5. Top 3 Data Insights
 1. The number of properties built with basements decreased after the 80s.
 2. Almost 60% of the properties became available during summer/spring.
-3. 50% of properties that should be bought are in a 15km radius from the lake.
-4. Properties selected to be bought in a 15km radius from lake correspond to 60% of expected profit.
+3. Properties selected to be bought in a 15km radius from lake correspond to 60% of expected profit.
 <br>
 
 ## 6. Conclusion
