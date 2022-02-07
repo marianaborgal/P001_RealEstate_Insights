@@ -47,12 +47,12 @@ This results on a 30.0 % gross revenue.
    * Spring starts on March 21st<br>
    * Summer starts on June 21st<br>
    * Fall starts on September 23rd<br>
-   * Winter starts on December 21d<br>
-* Business criteria to determine wether a property should be bought are:
+   * Winter starts on December 21st<br>
+* Business criteria to determine whether a property should be bought are:
    * Property must have a 'condition' equals or bigger than 3.
    * Property price must be below or equal the median price on the region (zipcode)
 
-* The variables on original dataset goes as follows:<br>
+<details><summary>The variables on original dataset goes as follows:</summary><br>
 
 Variable | Definition
 ------------ | -------------
@@ -77,12 +77,12 @@ Variable | Definition
 |long | Longitude|
 |sqft_living15 | The square footage of interior housing living space for the nearest 15 neighbors|
 |sqft_lot15 | The square footage of the land lots of the nearest 15 neighbors|
-
-* Variables created during the project development goes as follow:
+</details>
+<details><summary>Variables created during the project development goes as follow:</summary><br>
 
 Variable | Definition
 ------------ | -------------
-| decision | wether a property should be bought |
+| decision | whether a property should be bought |
 | median_price_zipcode | median price of zipcode region |
 | selling_price_suggestion | 30% more on buying price, if property should be bought |
 | expected_profit | difference between buying price and selling price suggestion  |
@@ -93,7 +93,7 @@ Variable | Definition
 | med_summer | median price from properties available during summer |
 | med_winter | median price from properties available during winter |
 | season_to_sell | in which season property should be sold |
-
+</details>
 <br>
 
 ## 4. Solution Strategy
