@@ -9,8 +9,8 @@ All information below is fictional.
 #### Project 001 - Real Estate Insights
 The objetives of this project are:
 * Perform exploratory data analysis on properties available on dataset.
-* Determine which properties should be bouth according to business criteria.
-* Develop a online [dashboard](https://p001-realestate-insights.herokuapp.com/) that can be acessed by the CEO from a mobile or computer.
+* Determine which properties should be purchased according to business criteria.
+* Develop an online [dashboard](https://p001-realestate-insights.herokuapp.com/) that can be acessed by the CEO from a mobile or computer.
 <br>
 
 ## 1. Business Problem
